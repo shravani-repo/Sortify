@@ -250,27 +250,27 @@ Possible future versions may include:
 ☁️ Cloud backup integration
 🔐 Additional safety confirmations
 
-# 📸 Screenshots
+## 📸 Screenshots
 
-## Dashboard
+### Dashboard
 
-![Sortify Dashboard](Screenshots/Dashboard.png)
+<img src="Screenshots/Dashboard.png" alt="Sortify Dashboard">
 
-## Organize Files
+### Organize Files
 
-![Organize Files](Screenshots/organizer.png)
+<img src="Screenshots/organizer.png" alt="Organize Files">
 
-## Preview
+### Preview
 
-![File Organization Preview](Screenshots/completion.png)
+<img src="Screenshots/completion.png" alt="File Organization Preview">
 
-## History
+### History
 
-![Sortify History](Screenshots/History.png)
+<img src="Screenshots/History.png" alt="Sortify History">
 
-## Settings
+### Settings
 
-![Sortify Settings](Screenshots/settings.png)
+<img src="Screenshots/settings.png" alt="Sortify Settings">
 📌 Version
 
 Sortify v1.0
