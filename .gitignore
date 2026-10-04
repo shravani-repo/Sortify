@@ -1,0 +1,31 @@
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+.venv/
+env/
+
+# SQLite database
+organizer.db
+*.db
+
+# IDE settings
+.vscode/
+.idea/
+
+# Build files
+build/
+dist/
+*.spec
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Python test/cache files
+.pytest_cache/
+.coverage
+htmlcov/
