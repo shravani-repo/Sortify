@@ -254,23 +254,23 @@ Possible future versions may include:
 
 ## Dashboard
 
-![Sortify Dashboard](screenshots/Dashboard.png)
+![Sortify Dashboard](Screenshots/Dashboard.png)
 
 ## Organize Files
 
-![Organize Files](screenshots/organize.png)
+![Organize Files](Screenshots/organizer.png)
 
 ## Preview
 
-![File Organization Preview](screenshots/completion.png)
+![File Organization Preview](Screenshots/completion.png)
 
 ## History
 
-![Sortify History](screenshots/History.png)
+![Sortify History](Screenshots/History.png)
 
 ## Settings
 
-![Sortify Settings](screenshots/settings.png)
+![Sortify Settings](Screenshots/settings.png)
 📌 Version
 
 Sortify v1.0
