@@ -1,60 +1,299 @@
-# Smart File Organizer
+# 📁 Sortify
 
-A modular desktop application that safely organizes messy folders by file type, custom rules, and modification date. It includes preview mode, duplicate detection, activity history, and undo support.
+### Smart. Simple. Sorted.
 
-## Features
+Sortify is a professional desktop file organization application built with Python and CustomTkinter.
 
-- Categorizes images, documents, audio, video, archives, code, and unknown files.
-- Preview changes before any files move.
-- Never overwrites an existing file; it creates a numbered name instead.
-- Skips the generated `Organized/` folder to avoid recursive processing.
-- Optional year/month date-based destinations.
-- SHA-256 duplicate detection that reports matches without deleting files.
-- SQLite-backed operation history and one-click undo.
-- Custom extension-to-category rules in Settings.
+It automatically organizes files into meaningful categories based on their file types, while providing preview mode, custom organization rules, history tracking, undo support, and activity analytics.
 
-## Setup
+---
 
-```bash
-cd Smart-File-Organizer
-python3 -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
-```
+## ✨ Features
 
-## Run
+### 📂 Smart File Organization
+Automatically detects file types and organizes them into categories such as:
 
-```bash
-python main.py
-```
+- Images
+- Documents
+- Videos
+- Audio
+- Archives
+- Code
+- Others
 
-Choose **Organize Files**, select a test folder, review the preview, then click **Organize files**. The application asks for confirmation before moving anything. The SQLite history database is created as `organizer.db` next to `main.py`.
+### 👀 Preview Mode
+See exactly where files will be moved before applying any changes.
 
-## Run tests
-
-```bash
-python -m unittest discover -s tests -v
-```
-
-## Project structure
+### 📅 Date-Based Organization
+Files can optionally be organized using:
 
 ```text
-Smart-File-Organizer/
+Organized/
+├── Images/
+│   └── 2026/
+│       └── October/
+├── Documents/
+│   └── 2026/
+│       └── October/
+└── Videos/
+    └── 2026/
+        └── October/
+ ⚙️ Custom Extension Rules
+
+Create your own rules for file extensions.
+
+Example:
+
+.csv → Data Files
+.log → Logs
+.ipynb → Notebooks
+
+Custom rules can also be deleted or updated.
+
+↩️ Undo Support
+
+Accidentally organized files?
+
+Sortify keeps track of organization batches so files can be restored using the Undo feature.
+
+📊 Dashboard Analytics
+
+The dashboard provides an overview of:
+
+Total files scanned
+Images
+Documents
+Media
+Category breakdown
+🕘 Organization History
+
+Every organization batch is recorded in SQLite.
+
+History includes:
+
+Batch number
+Date and time
+Number of files
+Completion status
+Undo option
+🔎 Search & Filter
+
+History can be searched using:
+
+Batch ID
+Date
+File count
+
+You can also filter batches by:
+
+All
+Completed
+Undone
+📋 Organization Summary
+
+After organizing files, Sortify displays a summary showing the result of the operation.
+
+🛡️ Safe File Handling
+
+Sortify includes several safety mechanisms:
+
+Preview before organization
+Duplicate filename handling
+Organization history
+Undo functionality
+Validation of selected folders
+Files are moved rather than deleted
+🛠️ Tech Stack
+Technology	Purpose
+Python	Core application logic
+CustomTkinter	Desktop GUI
+SQLite	History and custom rules
+pathlib	File and path handling
+shutil	File operations
+dataclasses	Structured file operations
+📂 Project Structure
+Sortify/
+│
 ├── main.py
-├── organizer.py          # Planning and executing safe file moves
-├── file_detector.py      # Built-in and custom categorization rules
-├── duplicate_checker.py  # SHA-256 duplicate groups
-├── database.py           # SQLite schema and persistence
-├── undo_manager.py       # Restore completed batches
-├── gui/
-│   ├── app.py
-│   ├── dashboard.py
-│   ├── history.py
-│   └── settings.py
-└── tests/
-    └── test_organizer.py
-```
+├── database.py
+├── file_detector.py
+├── organizer.py
+├── undo_manager.py
+├── README.md
+├── organizer.db
+│
+└── gui/
+    ├── __init__.py
+    ├── app.py
+    ├── dashboard.py
+    ├── history.py
+    ├── settings.py
+    └── theme.py
+🚀 Getting Started
+1. Clone the repository
+git clone https://github.com/YOUR_USERNAME/Sortify.git
 
-## Safety notes
+Move into the project directory:
 
-This project moves files only after explicit confirmation. It does not delete duplicates. Test with a copy of sample files first, and keep backups of important data.
+cd Sortify
+2. Install dependencies
+
+Install CustomTkinter:
+
+pip install customtkinter
+3. Run Sortify
+python main.py
+
+The Sortify desktop application will launch.
+
+🔄 How Sortify Works
+
+The basic workflow is:
+
+Select Folder
+      ↓
+Detect Files
+      ↓
+Determine Categories
+      ↓
+Preview Changes
+      ↓
+Organize Files
+      ↓
+Save History
+      ↓
+View Summary
+
+Users can then view the operation in History and undo a completed batch if required.
+
+🖥️ Application Sections
+Dashboard
+
+Provides a quick overview of the selected folder and displays file statistics and category distribution.
+
+Organize Files
+
+Allows users to:
+
+Select a folder
+Enable date-based organization
+Preview planned operations
+Organize files
+View organization progress
+History
+
+Displays previous organization batches with search, filtering, and undo functionality.
+
+Settings
+
+Allows users to create and manage custom extension rules.
+
+🧠 Example
+
+Suppose a folder contains:
+
+photo.jpg
+resume.pdf
+song.mp3
+project.py
+movie.mp4
+data.csv
+
+Sortify can organize them into:
+
+Organized/
+│
+├── Images/
+│   └── photo.jpg
+│
+├── Documents/
+│   └── resume.pdf
+│
+├── Audio/
+│   └── song.mp3
+│
+├── Videos/
+│   └── movie.mp4
+│
+├── Code/
+│   └── project.py
+│
+└── Data Files/
+    └── data.csv
+
+The Data Files category can be created using a custom .csv rule.
+
+🎯 Project Goals
+
+Sortify was developed to demonstrate practical desktop application development using Python.
+
+The project focuses on:
+
+GUI development
+File system automation
+Object-oriented programming
+Database integration
+Error handling
+User experience
+Modular software architecture
+🔮 Future Improvements
+
+Possible future versions may include:
+
+🎨 Custom application icon
+🌙 Advanced dark/light themes
+📦 Windows .exe installer
+📈 More detailed analytics
+🗂️ Additional file categories
+🔍 Advanced file search
+⚡ Faster bulk organization
+☁️ Cloud backup integration
+🔐 Additional safety confirmations
+
+# 📸 Screenshots
+
+## Dashboard
+
+![Sortify Dashboard](screenshots/Dashboard.png)
+
+## Organize Files
+
+![Organize Files](screenshots/organize.png)
+
+## Preview
+
+![File Organization Preview](screenshots/completion.png)
+
+## History
+
+![Sortify History](screenshots/History.png)
+
+## Settings
+
+![Sortify Settings](screenshots/settings.png)
+📌 Version
+
+Sortify v1.0
+
+Smart. Simple. Sorted.
+
+👩‍💻 Author
+
+Shravani Raut
+
+BTech — Artificial Intelligence & Data Science
+
+Interested in:
+
+Python
+Artificial Intelligence
+Data Science
+Software Development
+Automation
+⭐ Support
+
+If you find Sortify useful or interesting, consider giving the repository a ⭐ on GitHub.
+
+📄 License
+
+This project is intended for educational and portfolio purposes.       
